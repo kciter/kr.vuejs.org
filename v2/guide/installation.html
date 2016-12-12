@@ -551,10 +551,10 @@
 <h2 id="독립-실행형"><a href="#독립-실행형" class="headerlink" title="독립 실행형"></a>독립 실행형</h2><p>다운로드 받아 script 태그에 추가하기만 하면 됩니다. <code>Vue</code>는 전역 변수로 등록됩니다.</p>
 <p class="tip">개발 중에는 최소화 버전을 사용하지 마십시오. 일반적인 실수에 대한 모든 훌륭한 경고를 놓치게됩니다! </p>
 
-<div id="downloads"><br><a class="button" href="/js/vue.js" download="">개발용 버전</a><span class="light info">모든 경고 및 디버그 모드 포함</span><br><br><a class="button" href="/js/vue.min.js" download="">배포용 버전</a><span class="light info">경고가 제거 되고, 24.72kb min+gzip 로 압축하였습니다.</span><br></div>
+<div id="downloads"><br><a class="button" href="/js/vue.js" download="">개발용 버전</a><span class="light info">모든 경고 및 디버그 모드 포함</span><br><br><a class="button" href="/js/vue.min.js" download="">배포용 버전</a><span class="light info">경고가 제거 되고, 25.29kb min+gzip 로 압축하였습니다.</span><br></div>
 
 <h3 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h3><p>추천 : <a href="https://unpkg.com/vue/dist/vue.js" target="_blank" rel="external">unpkg</a>는 npm에 올라간 최신 버전을 반영합니다. <a href="https://unpkg.com/vue/" target="_blank" rel="external">unpkg.com/vue/</a>에서 npm 패키지의 원본을 찾아 볼 수도 있습니다.</p>
-<p>또한 <a href="//cdn.jsdelivr.net/vue/2.1.3/vue.js">jsdelivr</a> 와 <a href="//cdnjs.cloudflare.com/ajax/libs/vue/2.1.3/vue.js">cdnjs</a> 를 사용할 수 있으나, 두 서비스는 동기화에 시간이 걸리므로 아직 최신 버전을 사용지 못할 수 있습니다.</p>
+<p>또한 <a href="//cdn.jsdelivr.net/vue/2.1.4/vue.js">jsdelivr</a> 와 <a href="//cdnjs.cloudflare.com/ajax/libs/vue/2.1.4/vue.js">cdnjs</a> 를 사용할 수 있으나, 두 서비스는 동기화에 시간이 걸리므로 아직 최신 버전을 사용지 못할 수 있습니다.</p>
 <h2 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h2><p>Vue로 대규모 응용 프로그램을 빌드할 때 NPM을 권장합니다. <a href="http://webpack.github.io/" target="_blank" rel="external">Webpack</a> 또는 <a href="http://browserify.org/" target="_blank" rel="external">Browserify</a>와 같은 모듈 번들러와 잘 작동합니다. Vue는 <a href="single-file-components.html">단일 파일 컴포넌트</a>를 만들기 위한 도구도 제공합니다.</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 최신 안정화 버전</span></div><div class="line">$ npm install vue</div></pre></td></tr></table></figure>
 <h3 id="독립-실행형-vs-런타임-전용-빌드"><a href="#독립-실행형-vs-런타임-전용-빌드" class="headerlink" title="독립 실행형 vs. 런타임 전용 빌드"></a>독립 실행형 vs. 런타임 전용 빌드</h3><p>두가지 빌드, 즉 독립 실행형 빌드와, 런타임 전용 빌드가 있습니다. 차이점은 독립 실행형에는 <strong>템플릿 컴파일러</strong> 가 포함되어 있고 런타임 전용 빌드에는 포함되지 않는다는 점입니다.</p>
@@ -562,7 +562,7 @@
 <ul>
 <li><p>독립 실행형 빌드는 컴파일러를 포함하고 <code>template</code> 옵션을 지원합니다.<strong>또한 브라우저 API 존재 여부에 의존하므로 서버측 렌더링에 사용할 수 없습니다.</strong></p>
 </li>
-<li><p>런타임 전용 빌드는 템플릿 컴파일러를 포함하지 않으며 <code>template</code> 옵션을 지원하지 않습니다. 런타임 전용 빌드를 사용할 때만 <code>render</code> 옵션을 사용할 수 있지만, 단일 파일 컴포넌트의 템플릿은 빌드 단계에서 <code>render</code> 함수로 미리 컴파일 되기 때문에 단일 파일 컴포넌트와 함께 작동합니다. 런타임 전용 빌드는 독립 실행형 빌드보다 약 30% 가벼우며 17.14kb min+gzip 밖에 되지 않습니다.</p>
+<li><p>런타임 전용 빌드는 템플릿 컴파일러를 포함하지 않으며 <code>template</code> 옵션을 지원하지 않습니다. 런타임 전용 빌드를 사용할 때만 <code>render</code> 옵션을 사용할 수 있지만, 단일 파일 컴포넌트의 템플릿은 빌드 단계에서 <code>render</code> 함수로 미리 컴파일 되기 때문에 단일 파일 컴포넌트와 함께 작동합니다. 런타임 전용 빌드는 독립 실행형 빌드보다 약 30% 가벼우며 17.58kb min+gzip 밖에 되지 않습니다.</p>
 </li>
 </ul>
 <p>기본적으로 NPM 패키지는 <strong>런타임 전용</strong> 빌드입니다. 독립 실행형 빌드를 사용하려면 Webpack 구성에 다음과 같은 별칭을 추가합니다.</p>
