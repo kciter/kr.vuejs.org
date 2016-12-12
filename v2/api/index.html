@@ -367,7 +367,7 @@
 </ul>
 </li>
 <li><p><strong>사용방법:</strong></p>
-<p>전역 구성 요소를 등록하거나 검색합니다. 등록 시 자동으로 구성 요소의 <code>name</code>을 주어진 <code>id</code>로 설정합니다.</p>
+<p>전역 컴포넌트를 등록하거나 검색합니다. 등록 시 자동으로 컴포넌트의 <code>name</code>을 주어진 <code>id</code>로 설정합니다.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 확장된 생성자를 등록합니다</span></div><div class="line">Vue.component(<span class="string">'my-component'</span>, Vue.extend(&#123; <span class="comment">/* ... */</span> &#125;))</div><div class="line"></div><div class="line"><span class="comment">// 옵션 객체를 등록합니다 (자동으로 Vue.extend를 호출합니다)</span></div><div class="line">Vue.component(<span class="string">'my-component'</span>, &#123; <span class="comment">/* ... */</span> &#125;)</div><div class="line"></div><div class="line"><span class="comment">// 등록된 컴포넌트를 검색합니다 (항상 생성자를 반환합니다)</span></div><div class="line"><span class="keyword">var</span> MyComponent = Vue.component(<span class="string">'my-component'</span>)</div></pre></td></tr></table></figure>
 </li>
 <li><p><strong>참고:</strong> <a href="../guide/components.html">컴포넌트</a></p>
@@ -511,7 +511,7 @@
 </li>
 <li><p><strong>상세:</strong></p>
 <p>Vue 인스턴스에 마운트 할 기존 DOM 엘리먼트 필요합니다. CSS 선택자 문자열 또는 실제 HTMLElement 이어야 합니다.</p>
-<p>인스턴스가 마운트 된 이후, 그 요소는 <code>vm.$el</code>로 액세스 할 수 있습니다.</p>
+<p>인스턴스가 마운트 된 이후, 그 엘리먼트는 <code>vm.$el</code>로 액세스 할 수 있습니다.</p>
 <p>인스턴스화 할 때 옵션을 사용할 수 있는 경우 인스턴스는 즉시 컴파일을 시작합니다. 그렇지 않으면 컴파일을 수동으로 하기 위해 <code>vm.$mount()</code>를 명시적으로 호출해야합니다.</p>
 <p class="tip">제공된 엘리먼트는 설치 지점으로 사용합니다. Vue 1.x와 달리 마운트 된 엘리먼트는 모든 경우에 Vue가 생성한 DOM으로 대체됩니다. 그러므로 루트 인스턴스를 <code>&lt;html&gt;</code> 또는 <code>&lt;body&gt;</code>에 마운트 하는 것을 권장하지 않습니다.</p>
 </li>
@@ -523,7 +523,7 @@
 </li>
 <li><p><strong>상세:</strong></p>
 <p>Vue 인스턴스의 마크업으로 사용할 문자열 템플릿 입니다. 템플릿은 마운트 된 엘리먼트를 <strong>대체</strong> 합니다. 템플릿에 컨텐츠 배포 슬롯이 없는 경우 마운트 된 엘리먼트의 기존 마크업은 무시됩니다.</p>
-<p>문자열이 <code>#</code>로 시작하면 querySelector로 사용되며 선택된 요소의 innerHTML을 템플릿 문자열로 사용합니다. 이렇게 하면 일반적인 <code>&lt;script type=&quot;x-template&quot;&gt;</code> 트릭을 사용하여 템플릿을 포함할 수 있습니다.</p>
+<p>문자열이 <code>#</code>로 시작하면 querySelector로 사용되며 선택된 엘리먼트의 innerHTML을 템플릿 문자열로 사용합니다. 이렇게 하면 일반적인 <code>&lt;script type=&quot;x-template&quot;&gt;</code> 트릭을 사용하여 템플릿을 포함할 수 있습니다.</p>
 <p class="tip">보안 관점에서 신뢰할 수 있는 Vue 템플릿만 사용해야 합니다. 사용자 생성 콘텐츠를 템플릿으로 사용하면 안됩니다.</p>
 </li>
 <li><p><strong>참고:</strong></p>
@@ -1014,7 +1014,7 @@
 <li><p><strong>반환 값:</strong> <code>vm</code> - 인스턴스 그 자체</p>
 </li>
 <li><p><strong>사용방법:</strong></p>
-<p>Vue 인스턴스가 인스턴스화 할 때 <code>el</code> 옵션이 없으면 연결된 DOM 요소 없이 “unmounted” 상태가 됩니다. <code>vm.$mount()</code>는 unmounted 된 Vue인스턴스의 마운트를 수동으로 시작하는데 사용할 수 있습니다.</p>
+<p>Vue 인스턴스가 인스턴스화 할 때 <code>el</code> 옵션이 없으면 연결된 DOM 엘리먼트 없이 “unmounted” 상태가 됩니다. <code>vm.$mount()</code>는 unmounted 된 Vue인스턴스의 마운트를 수동으로 시작하는데 사용할 수 있습니다.</p>
 <p><code>elementOrSelector</code> 인자가 제공되지 않으면, 템플릿은 문서가 아닌 엘리먼트로 렌더링 될 것이므로 DOM API를 사용하여 문서에 직접 삽입해야 합니다.</p>
 <p>이 메소드는 다른 인스턴스 메소드를 체이닝 할 수 있도록 인스턴스 그 자체를 반환 합니다.</p>
 </li>
@@ -1074,7 +1074,7 @@
 <li><p><strong>예상됨:</strong> <code>string</code></p>
 </li>
 <li><p><strong>상세:</strong></p>
-<p>요소의 <code>textContent</code>를 업데이트 합니다. <code>textContent</code>의 일부를 갱신해야 하면 <code>{{ Mustache }}</code>를 사용해야 합니다.</p>
+<p>엘리먼트의 <code>textContent</code>를 업데이트 합니다. <code>textContent</code>의 일부를 갱신해야 하면 <code>{{ Mustache }}</code>를 사용해야 합니다.</p>
 </li>
 <li><p><strong>예제:</strong></p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">v-text</span>=<span class="string">"msg"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 같습니다 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -1086,7 +1086,7 @@
 <li><p><strong>예상됨:</strong> <code>string</code></p>
 </li>
 <li><p><strong>상세:</strong></p>
-<p>요소의 <code>innerHTML</code>을 업데이트 합니다. <strong>내용은 일반 HTML으로 삽입되므로 Vue 템플릿으로 컴파일 되지 않습니다.</strong> <code>v-html</code>을 사용하여 템플릿을 작성하려는 경우 컴포넌트를 사용하여 솔루션을 다시 생각해 보십시오.</p>
+<p>엘리먼트의 <code>innerHTML</code>을 업데이트 합니다. <strong>내용은 일반 HTML으로 삽입되므로 Vue 템플릿으로 컴파일 되지 않습니다.</strong> <code>v-html</code>을 사용하여 템플릿을 작성하려는 경우 컴포넌트를 사용하여 솔루션을 다시 생각해 보십시오.</p>
 <p class="tip">  웹사이트에서 임의의 HTML을 동적으로 렌더링하면 <a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="external">XSS 공격</a>으로 이어질 수 있으므로 매우 위험할 수 있습니다. 신뢰할 수 있는 컨텐츠에만 <code>v-html</code>을 사용하고 사용자가 제공한 컨텐츠에는 <strong>절대로</strong> 사용하지 마십시오</p>
 </li>
 <li><p><strong>예제:</strong></p>
@@ -1109,7 +1109,7 @@
 <li><p><strong>예상됨:</strong> <code>any</code></p>
 </li>
 <li><p><strong>사용방법:</strong></p>
-<p>표현식 값의 참 거짓을 기반으로 엘리먼트를 조건부 렌더링 합니다. 엘리먼트 및 포함된 지시문 / 컴포넌트는 토글하는 동안 삭제되고 다시 작성됩니다. 엘리먼트가 <code>&lt;template&gt;</code>요소인 경우 그 내용은 조건부 블록이 됩니다.</p>
+<p>표현식 값의 참 거짓을 기반으로 엘리먼트를 조건부 렌더링 합니다. 엘리먼트 및 포함된 지시문 / 컴포넌트는 토글하는 동안 삭제되고 다시 작성됩니다. 엘리먼트가 <code>&lt;template&gt;</code>엘리먼트인 경우 그 내용은 조건부 블록이 됩니다.</p>
 <p>조건이 변경될 때 전환이 호출 됩니다.</p>
 </li>
 <li><p><strong>참고:</strong> <a href="../guide/conditional.html">조건부 렌더링 - v-if</a></p>
@@ -1118,7 +1118,7 @@
 <h3 id="v-else"><a href="#v-else" class="headerlink" title="v-else"></a>v-else</h3><ul>
 <li><p><strong>표현식이 필요 없습니다.</strong></p>
 </li>
-<li><p><strong>제한:</strong> 이전 형제 요소가 <code>v-if</code>또는 <code>v-else-if</code>이어야 합니다.</p>
+<li><p><strong>제한:</strong> 이전 형제 엘리먼트가 <code>v-if</code>또는 <code>v-else-if</code>이어야 합니다.</p>
 </li>
 <li><p><strong>사용방법:</strong></p>
 <p><code>v-if</code> 또는<code>v-if</code> /<code>v-else-if</code> 체인을위한 “else 블록”을 나타냅니다.</p>
@@ -1136,7 +1136,7 @@
 <ul>
 <li><p><strong>예상됨:</strong> <code>any</code></p>
 </li>
-<li><p><strong>제한:</strong> 이전 형제 요소가 <code>v-if</code> 또는 <code>v-else-if</code> 이어야 합니다.</p>
+<li><p><strong>제한:</strong> 이전 형제 엘리먼트가 <code>v-if</code> 또는 <code>v-else-if</code> 이어야 합니다.</p>
 </li>
 <li><p><strong>사용방법:</strong></p>
 </li>
@@ -1150,7 +1150,7 @@
 <li><p><strong>예상됨:</strong> <code>Array | Object | number | string</code></p>
 </li>
 <li><p><strong>사용방법:</strong></p>
-<p>원본 데이터를 기반으로 엘리먼트 또는 템플릿 블록을 여러번 렌더링합니다. 지시문의 값은 반복되는 현재 요소에 대한 별칭을 제공하기 위해 특수 구문인 <code>alias in expression</code>을 사용해야 합니다.</p>
+<p>원본 데이터를 기반으로 엘리먼트 또는 템플릿 블록을 여러번 렌더링합니다. 지시문의 값은 반복되는 현재 엘리먼트에 대한 별칭을 제공하기 위해 특수 구문인 <code>alias in expression</code>을 사용해야 합니다.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span></div><div class="line">  &#123;&#123; item.text &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>또는, 인덱스(아니면 객체의 경우 키)의 별칭을 지정할 수 있습니다.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(item, index) in items"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(val, key) in object"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(val, key, index) in object"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -1179,7 +1179,7 @@
 <li><code>.capture</code> - 캡처 모드에서 이벤트 리스너를 추가합니다.</li>
 <li><code>.self</code> - 이벤트가 이 엘리먼트에서 전달된 경우에만 트리거를 처리합니다</li>
 <li><code>.{keyCode | keyAlias}</code> - 특정 키에 대해서만 트리거를 처리합니다.</li>
-<li><code>.native</code> - 컴포넌트의 루트 요소에서 네이티브 이벤트를 수신합니다.</li>
+<li><code>.native</code> - 컴포넌트의 루트 엘리먼트에서 네이티브 이벤트를 수신합니다.</li>
 </ul>
 </li>
 <li><p><strong>사용방법:</strong></p>
@@ -1219,7 +1219,7 @@
 <p>전달인자 없이 사용하면 속성 이름 - 값 쌍을 포함하는 객체를 바인딩 하는데 사용할 수 있습니다. 이 모드에서는 <code>class</code>와 <code>style</code>은 Array나 Objects를 지원하지 않습니다.</p>
 </li>
 <li><p><strong>예제:</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 속성을 바인딩 합니다. --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">v-bind:src</span>=<span class="string">"imageSrc"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 약어 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"imageSrc"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- with inline string concatenation --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"'/path/to/images/' + fileName"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 클래스 바인딩 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"&#123; red: isRed &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"[classA, classB]"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"[classA, &#123; classB: isB, classC: isC &#125;]"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 스타일 바인딩 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">"&#123; fontSize: size + 'px' &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">"[styleObjectA, styleObjectB]"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 속성 객체 바인딩 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind</span>=<span class="string">"&#123; id: someProp, 'other-attr': otherProp &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- prop 수식어를 사용하는 DOM 속성 바인딩 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:text-content.prop</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 속성 바인딩. 구성요소에서 "prop"를 선언 해야 합니다.  --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">:prop</span>=<span class="string">"someThing"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- XLink --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">svg</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">:xlink:special</span>=<span class="string">"foo"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 속성을 바인딩 합니다. --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">v-bind:src</span>=<span class="string">"imageSrc"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 약어 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"imageSrc"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- with inline string concatenation --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"'/path/to/images/' + fileName"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 클래스 바인딩 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"&#123; red: isRed &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"[classA, classB]"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"[classA, &#123; classB: isB, classC: isC &#125;]"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 스타일 바인딩 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">"&#123; fontSize: size + 'px' &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">"[styleObjectA, styleObjectB]"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 속성 객체 바인딩 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind</span>=<span class="string">"&#123; id: someProp, 'other-attr': otherProp &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- prop 수식어를 사용하는 DOM 속성 바인딩 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:text-content.prop</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 속성 바인딩. 컴포넌트에서 "prop"를 선언 해야 합니다.  --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">:prop</span>=<span class="string">"someThing"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- XLink --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">svg</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">:xlink:special</span>=<span class="string">"foo"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><code>.camel</code> 수식어는 DOM 템플릿을 사용할 떄 <code>v-bind</code> 속성 이름을 camelCase화 할수 있습니다. (예: SVG <code>viewBox</code>속성)</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">:view-box.camel</span>=<span class="string">"viewBox"</span>&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>문자열 템플릿을 사용하거나 <code>vue-loader</code>/<code>vueify</code> 로 컴파일 하는 경우 <code>.camel</code>은 필요 없습니다.</p>
@@ -1273,7 +1273,7 @@
 <li><p><strong>표현식이 필요하지 않습니다</strong></p>
 </li>
 <li><p><strong>사용방법:</strong></p>
-<p>이 지시문은 Vue 인스턴스가 컴파일을 완료할 때까지 요소에 남아있습니다. <code>[v-cloak] { display: none }</code>와 같은 CSS규칙과 함께 이 지시문은 Vue인스턴스가 준비될 때까지 컴파일되지 않은 mustache 바인딩을 숨기는데 사용할 수 있습니다.</p>
+<p>이 지시문은 Vue 인스턴스가 컴파일을 완료할 때까지 엘리먼트에 남아있습니다. <code>[v-cloak] { display: none }</code>와 같은 CSS규칙과 함께 이 지시문은 Vue인스턴스가 준비될 때까지 컴파일되지 않은 mustache 바인딩을 숨기는데 사용할 수 있습니다.</p>
 </li>
 <li><p><strong>예제:</strong></p>
 <figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-attr">[v-cloak]</span> &#123;</div><div class="line">  <span class="attribute">display</span>: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -1297,7 +1297,7 @@
 </ul>
 <h2 id="특별한-속성들"><a href="#특별한-속성들" class="headerlink" title="특별한 속성들"></a>특별한 속성들</h2><h3 id="key"><a href="#key" class="headerlink" title="key"></a>key</h3><ul>
 <li><p><strong>예상됨:</strong> <code>string</code></p>
-<p><code>key</code> 특수 속성은 Vue의 가상 DOM 알고리즘이 새로운 노드 목록을 이전 목록과 비교할 때 VNode를 식별하기 위한 힌트로 주로 사용됩니다. 키가 없으면 Vue는 엘리먼트 이동을 최소화하고 같은 유형의 요소를 최대한 많이 패치 / 재사용하려고 하는 알고리즘을 사용합니다. 키를 사용하면 키의 순서 변경을 기반으로 엘리먼트가 재정렬되고 더 이상 존재하지 않는 키가 있는 엘리먼트는 항상 제거 / 삭제 됩니다.</p>
+<p><code>key</code> 특수 속성은 Vue의 가상 DOM 알고리즘이 새로운 노드 목록을 이전 목록과 비교할 때 VNode를 식별하기 위한 힌트로 주로 사용됩니다. 키가 없으면 Vue는 엘리먼트 이동을 최소화하고 같은 유형의 엘리먼트를 최대한 많이 패치 / 재사용하려고 하는 알고리즘을 사용합니다. 키를 사용하면 키의 순서 변경을 기반으로 엘리먼트가 재정렬되고 더 이상 존재하지 않는 키가 있는 엘리먼트는 항상 제거 / 삭제 됩니다.</p>
 <p>동일한 부모의 자식 엘리먼트는 <strong>고유 키</strong> 가 있어야 합니다. 키가 중복되면 렌더링 오류가 발생합니다.</p>
 <p>가장 일반적인 이용 사례는 <code>v-for</code>와 결합합니다.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -1313,7 +1313,7 @@
 </ul>
 <h3 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h3><ul>
 <li><p><strong>예상됨:</strong> <code>string</code></p>
-<p><code>ref</code> 엘리먼트 또는 자식 컴포넌트에 대한 참조를 등록하는데 사용합니다. 참조는 부모 컴포넌트의 <code>$refs</code> 객체 아래에 등록됩니다. 일반 DOM 요소에서 사용되는 경우 참조는 해당 엘리먼트입니다. 하위 컴포넌트에서 사용되는 경우 참조는 컴포넌트 인스턴스 입니다.</p>
+<p><code>ref</code> 엘리먼트 또는 자식 컴포넌트에 대한 참조를 등록하는데 사용합니다. 참조는 부모 컴포넌트의 <code>$refs</code> 객체 아래에 등록됩니다. 일반 DOM 엘리먼트에서 사용되는 경우 참조는 해당 엘리먼트입니다. 하위 컴포넌트에서 사용되는 경우 참조는 컴포넌트 인스턴스 입니다.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- vm.$refs.p는 DOM 노드가 됩니다 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ref</span>=<span class="string">"p"</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- vm.$refs.child는 자식 컴포넌트 인스턴스가 됩니다. --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">child-comp</span> <span class="attr">ref</span>=<span class="string">"child"</span>&gt;</span><span class="tag">&lt;/<span class="name">child-comp</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><code>v-for</code>를 사용하여 엘리먼트 / 컴포넌트에 사용되는 경우 등록된 참조는 DOM 노드 또는 컴포넌트 인스턴스가 포함된 배열입니다.</p>
 <p>참조 등록 타이밍에 대한 중요한 참고 사항: 참조 자체는 렌더링 함수의 결과로 생서되기 떄문에 초기 렌더링에서 참조 자체를 액세스 할 수 없습니다. 아직 존재하지 않습니다! <code>$refs</code>는 또한 반응이 없으므로 데이터 바인딩을 위해 템플릿에서 사용해서는 안됩니다.</p>
@@ -1395,7 +1395,7 @@
 </ul>
 </li>
 <li><p><strong>사용방법:</strong></p>
-<p><code>&lt;transition-group&gt;</code>은 <strong>여러</strong> 엘리먼트 / 컴포넌트에 대한 전환 효과로 사용합니다. <code>&lt;transition-group&gt;</code>은 실제 DOM 요소를 렌더링 합니다. 기본값으로 <code>&lt;span&gt;</code>을 렌더링하고 <code>tag</code> 속성을 통해 렌더링 해야하는 요소를 설정할 수 있습니다.<br>애니메이션이 제대로 작동되게 하려면 <code>&lt;transition-group&gt;</code>에 있는 모든 자식이 <strong>유일 키</strong> 가 되어야 합니다.</p>
+<p><code>&lt;transition-group&gt;</code>은 <strong>여러</strong> 엘리먼트 / 컴포넌트에 대한 전환 효과로 사용합니다. <code>&lt;transition-group&gt;</code>은 실제 DOM 엘리먼트를 렌더링 합니다. 기본값으로 <code>&lt;span&gt;</code>을 렌더링하고 <code>tag</code> 속성을 통해 렌더링 해야하는 엘리먼트를 설정할 수 있습니다.<br>애니메이션이 제대로 작동되게 하려면 <code>&lt;transition-group&gt;</code>에 있는 모든 자식이 <strong>유일 키</strong> 가 되어야 합니다.</p>
 <p><code>&lt;transition-group&gt;</code>은 CSS transform을 통해 장면 전환을 지원합니다. 스크린에서 자식의 위치가 변경된 후 움직이는 CSS클래스 (<code>name</code> 속성에서 자동 생성되거나 <code>move-class</code> 속성으로 설정됨)가 적용됩니다. 움직이는 클래스가 적용될 때 CSS <code>transform</code> 속성이 “전환가능”하면, 엘리먼트는 <a href="https://aerotwist.com/blog/flip-your-animations/" target="_blank" rel="external">FLIP technique</a>을 사용하여 목적지로 부드럽게 움직입니다.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">transition-group</span> <span class="attr">tag</span>=<span class="string">"ul"</span> <span class="attr">name</span>=<span class="string">"slide"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span></div><div class="line">    &#123;&#123; item.text &#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">transition-group</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
@@ -1410,7 +1410,7 @@
 </ul>
 </li>
 <li><p><strong>사용방법:</strong></p>
-<p>동적 컴포넌트를 감싸는 경우 <code>&lt;keep-alive&gt;</code>는 비활성 컴포넌트 인스턴스를 파괴하지 않고 캐시합니다. <code>&lt;transition&gt;</code>과 비슷하게 <code>&lt;keep-alive&gt;</code>는 추상 요소입니다. DOM 요소 자체는 렌더링 하지 않고 컴포넌트 부모 체인에는 나타나지 않습니다.</p>
+<p>동적 컴포넌트를 감싸는 경우 <code>&lt;keep-alive&gt;</code>는 비활성 컴포넌트 인스턴스를 파괴하지 않고 캐시합니다. <code>&lt;transition&gt;</code>과 비슷하게 <code>&lt;keep-alive&gt;</code>는 추상 엘리먼트입니다. DOM 엘리먼트 자체는 렌더링 하지 않고 컴포넌트 부모 체인에는 나타나지 않습니다.</p>
 <p>컴포넌트가 <code>&lt;keep-alive&gt;</code>내에서 토글 될 때, <code>activated</code>와 <code>deactivated</code>라이프사이클 훅이 그에 따라 호출됩니다.</p>
 <p>주로 컴포넌트 상태를 보존하거나 재 렌더링을 피하는데 사용합니다.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 기본 사용 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"view"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 여러개의 조건부 자식 컴포넌트 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">comp-a</span> <span class="attr">v-if</span>=<span class="string">"a &gt; 1"</span>&gt;</span><span class="tag">&lt;/<span class="name">comp-a</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">comp-b</span> <span class="attr">v-else</span>&gt;</span><span class="tag">&lt;/<span class="name">comp-b</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- &lt;transition&gt;과 함께 사용합니다. --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">transition</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"view"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div></pre></td></tr></table></figure>
